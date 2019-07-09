@@ -12,7 +12,6 @@ redis_git_dirty:0
 redis_build_id:ba67cab96bf0dfae
 ...
 ```
-## 2.redis-cli run success
 ```
 [root@centos ~]# redis-cli -h 127.0.0.1 -p 6379 -a redispwd info 2>/dev/null | grep $1":" | cut -d ':' -f 2
 5.0.5
@@ -21,10 +20,11 @@ redis_build_id:ba67cab96bf0dfae
 ba67cab96bf0dfae
 ...
 ```
-## 3./etc/zabbix/zabbix_agentd.d/userparameter_redis.conf
+## 2./etc/zabbix/zabbix_agentd.d/userparameter_redis.conf
 ```
 UserParameter=redis.info[*],redis-cli -h 127.0.0.1 -p 6379 -a redispwd info 2>/dev/null | grep $1":" | cut -d ':' -f 2
 ```
+## 3 systemctl restart zabbix-agent
 ## 4.import zbx_redis_templates.xml
 Zabbix->Configuration->Templates->import->zbx_redis_templates.xml
 
