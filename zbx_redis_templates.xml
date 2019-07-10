@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-07-10T07:26:40Z</date>
+    <date>2019-07-10T07:41:34Z</date>
     <groups>
         <group>
             <name>Templates/Databases</name>
@@ -720,7 +720,7 @@
                 <graph_item>
                     <sortorder>0</sortorder>
                     <drawtype>0</drawtype>
-                    <color>BF00FF</color>
+                    <color>FF0000</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
@@ -732,9 +732,9 @@
                 <graph_item>
                     <sortorder>1</sortorder>
                     <drawtype>0</drawtype>
-                    <color>039BE5</color>
+                    <color>00FF00</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template DB Redis</host>
@@ -744,7 +744,19 @@
                 <graph_item>
                     <sortorder>2</sortorder>
                     <drawtype>0</drawtype>
-                    <color>2774A4</color>
+                    <color>89ABF8</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>7</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template DB Redis</host>
+                        <key>redis.info[connected_slaves]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>7EC25C</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
@@ -754,9 +766,9 @@
                     </item>
                 </graph_item>
                 <graph_item>
-                    <sortorder>3</sortorder>
+                    <sortorder>4</sortorder>
                     <drawtype>0</drawtype>
-                    <color>A54F10</color>
+                    <color>274482</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
@@ -766,9 +778,9 @@
                     </item>
                 </graph_item>
                 <graph_item>
-                    <sortorder>4</sortorder>
+                    <sortorder>5</sortorder>
                     <drawtype>0</drawtype>
-                    <color>8BC34A</color>
+                    <color>2B5429</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
@@ -778,33 +790,9 @@
                     </item>
                 </graph_item>
                 <graph_item>
-                    <sortorder>5</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>FF0000</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template DB Redis</host>
-                        <key>redis.info[rejected_connections]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
                     <sortorder>6</sortorder>
                     <drawtype>0</drawtype>
-                    <color>AC8C14</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template DB Redis</host>
-                        <key>redis.info[connected_slaves]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>7</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>611F27</color>
+                    <color>8048B4</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
@@ -814,9 +802,9 @@
                     </item>
                 </graph_item>
                 <graph_item>
-                    <sortorder>8</sortorder>
+                    <sortorder>7</sortorder>
                     <drawtype>0</drawtype>
-                    <color>F230E0</color>
+                    <color>FD5434</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
@@ -826,15 +814,27 @@
                     </item>
                 </graph_item>
                 <graph_item>
-                    <sortorder>9</sortorder>
+                    <sortorder>8</sortorder>
                     <drawtype>0</drawtype>
-                    <color>5CCD18</color>
+                    <color>790E1F</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
                         <host>Template DB Redis</host>
                         <key>redis.ping</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>9</sortorder>
+                    <drawtype>0</drawtype>
+                    <color>FFBF00</color>
+                    <yaxisside>0</yaxisside>
+                    <calc_fnc>7</calc_fnc>
+                    <type>0</type>
+                    <item>
+                        <host>Template DB Redis</host>
+                        <key>redis.info[rejected_connections]</key>
                     </item>
                 </graph_item>
             </graph_items>
