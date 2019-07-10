@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-07-10T07:30:38Z</date>
+    <date>2019-07-10T07:42:32Z</date>
     <groups>
         <group>
             <name>Templates/Databases</name>
@@ -9,8 +9,8 @@
     </groups>
     <templates>
         <template>
-            <template>Template DB Redis2</template>
-            <name>Template DB Redis2</name>
+            <template>Template DB Redis1</template>
+            <name>Template DB Redis1</name>
             <description/>
             <groups>
                 <group>
@@ -28,7 +28,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>redis2.info[blocked_clients]</key>
+                    <key>redis1.info[blocked_clients]</key>
                     <delay>1m</delay>
                     <history>1w</history>
                     <trends>365d</trends>
@@ -87,7 +87,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>redis2.info[connected_clients]</key>
+                    <key>redis1.info[connected_clients]</key>
                     <delay>1m</delay>
                     <history>1w</history>
                     <trends>365d</trends>
@@ -146,7 +146,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>redis2.info[connected_slaves]</key>
+                    <key>redis1.info[connected_slaves]</key>
                     <delay>1m</delay>
                     <history>1w</history>
                     <trends>365d</trends>
@@ -205,7 +205,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>redis2.info[instantaneous_input_kbps]</key>
+                    <key>redis1.info[instantaneous_input_kbps]</key>
                     <delay>1m</delay>
                     <history>1w</history>
                     <trends>365d</trends>
@@ -264,7 +264,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>redis2.info[instantaneous_ops_per_sec]</key>
+                    <key>redis1.info[instantaneous_ops_per_sec]</key>
                     <delay>1m</delay>
                     <history>1w</history>
                     <trends>365d</trends>
@@ -323,7 +323,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>redis2.info[instantaneous_output_kbps]</key>
+                    <key>redis1.info[instantaneous_output_kbps]</key>
                     <delay>1m</delay>
                     <history>1w</history>
                     <trends>365d</trends>
@@ -382,7 +382,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>redis2.info[keyspace_hits]</key>
+                    <key>redis1.info[keyspace_hits]</key>
                     <delay>1m</delay>
                     <history>1w</history>
                     <trends>365d</trends>
@@ -441,7 +441,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>redis2.info[keyspace_misses]</key>
+                    <key>redis1.info[keyspace_misses]</key>
                     <delay>1m</delay>
                     <history>1w</history>
                     <trends>365d</trends>
@@ -500,7 +500,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>redis2.info[rejected_connections]</key>
+                    <key>redis1.info[rejected_connections]</key>
                     <delay>1m</delay>
                     <history>1w</history>
                     <trends>365d</trends>
@@ -559,7 +559,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>redis2.info[used_memory_peak]</key>
+                    <key>redis1.info[used_memory_peak]</key>
                     <delay>1m</delay>
                     <history>1w</history>
                     <trends>365d</trends>
@@ -618,7 +618,7 @@
                     <type>0</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>redis2.ping</key>
+                    <key>redis1.ping</key>
                     <delay>1m</delay>
                     <history>1w</history>
                     <trends>365d</trends>
@@ -682,10 +682,10 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template DB Redis2:redis2.ping.last()}&lt;&gt;1</expression>
+            <expression>{Template DB Redis1:redis1.ping.last()}&lt;&gt;1</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
-            <name>Redis2 ping fail</name>
+            <name>Redis1 ping fail</name>
             <correlation_mode>0</correlation_mode>
             <correlation_tag/>
             <url/>
@@ -700,7 +700,7 @@
     </triggers>
     <graphs>
         <graph>
-            <name>Redis2</name>
+            <name>Redis1</name>
             <width>900</width>
             <height>200</height>
             <yaxismin>0.0000</yaxismin>
@@ -720,25 +720,25 @@
                 <graph_item>
                     <sortorder>0</sortorder>
                     <drawtype>0</drawtype>
-                    <color>BB2A02</color>
+                    <color>FF0000</color>
                     <yaxisside>0</yaxisside>
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template DB Redis2</host>
-                        <key>redis2.info[blocked_clients]</key>
+                        <host>Template DB Redis1</host>
+                        <key>redis1.info[blocked_clients]</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
                     <drawtype>0</drawtype>
-                    <color>5A2B57</color>
+                    <color>00FF00</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template DB Redis2</host>
-                        <key>redis2.info[connected_clients]</key>
+                        <host>Template DB Redis1</host>
+                        <key>redis1.info[connected_clients]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -746,11 +746,11 @@
                     <drawtype>0</drawtype>
                     <color>89ABF8</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template DB Redis2</host>
-                        <key>redis2.info[connected_slaves]</key>
+                        <host>Template DB Redis1</host>
+                        <key>redis1.info[connected_slaves]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -761,8 +761,8 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template DB Redis2</host>
-                        <key>redis2.info[instantaneous_input_kbps]</key>
+                        <host>Template DB Redis1</host>
+                        <key>redis1.info[instantaneous_input_kbps]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -773,8 +773,8 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template DB Redis2</host>
-                        <key>redis2.info[instantaneous_ops_per_sec]</key>
+                        <host>Template DB Redis1</host>
+                        <key>redis1.info[instantaneous_ops_per_sec]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -785,8 +785,8 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template DB Redis2</host>
-                        <key>redis2.info[instantaneous_output_kbps]</key>
+                        <host>Template DB Redis1</host>
+                        <key>redis1.info[instantaneous_output_kbps]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -797,8 +797,8 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template DB Redis2</host>
-                        <key>redis2.info[keyspace_hits]</key>
+                        <host>Template DB Redis1</host>
+                        <key>redis1.info[keyspace_hits]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -809,8 +809,8 @@
                     <calc_fnc>2</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template DB Redis2</host>
-                        <key>redis2.info[keyspace_misses]</key>
+                        <host>Template DB Redis1</host>
+                        <key>redis1.info[keyspace_misses]</key>
                     </item>
                 </graph_item>
                 <graph_item>
@@ -818,23 +818,23 @@
                     <drawtype>0</drawtype>
                     <color>790E1F</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template DB Redis2</host>
-                        <key>redis2.ping</key>
+                        <host>Template DB Redis1</host>
+                        <key>redis1.ping</key>
                     </item>
                 </graph_item>
                 <graph_item>
                     <sortorder>9</sortorder>
                     <drawtype>0</drawtype>
-                    <color>87AC4D</color>
+                    <color>FFBF00</color>
                     <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
+                    <calc_fnc>7</calc_fnc>
                     <type>0</type>
                     <item>
-                        <host>Template DB Redis2</host>
-                        <key>redis2.info[rejected_connections]</key>
+                        <host>Template DB Redis1</host>
+                        <key>redis1.info[rejected_connections]</key>
                     </item>
                 </graph_item>
             </graph_items>
