@@ -1,7 +1,9 @@
 # zbx_redix_templates
 zabbix4.0 redis monitor templates
 
-## 1.redis-cli run success
+## 1 Redis(Single)
+
+### 1.1 redis-cli run success
 ```
 [root@centos ~]# redis-cli -h 127.0.0.1 -p 6379 -a redispwd info
 Warning: Using a password with '-a' or '-u' option on the command line interface may not be safe.
@@ -20,13 +22,27 @@ redis_build_id:ba67cab96bf0dfae
 ba67cab96bf0dfae
 ...
 ```
-## 2./etc/zabbix/zabbix_agentd.d/userparameter_redis.conf
+### 1.2 /etc/zabbix/zabbix_agentd.d/userparameter_redis.conf
 ```
 UserParameter=redis.info[*],redis-cli -h 127.0.0.1 -p 6379 -a redispwd info 2>/dev/null | grep $1":" | cut -d ':' -f 2
+UserParameter=redis.ping,redis-cli -h 127.0.0.1 -p 6379 -a redispwd ping 2>/dev/null | grep -c PONG
 ```
-## 3 systemctl restart zabbix-agent
-## 4.import zbx_redis_templates.xml
+### 1.3 systemctl restart zabbix-agent
+### 1.4 import zbx_redis_templates.xml
 Zabbix->Configuration->Templates->import->zbx_redis_templates.xml
+### 1.5 Zabbix Host add Redis Template("Template DB Redis")
+
+## 2 Redis(Cluster)
+
+### 2.1 /etc/zabbix/zabbix_agentd.d/userparameter_redis1.conf
+```
+UserParameter=redis1.info[*],redis-cli -h 192.168.1.201 -p 6379 -a redispwd info 2>/dev/null | grep $1":" | cut -d ':' -f 2
+UserParameter=redis1.ping,redis-cli -h 192.168.1.201 -p 6379 -a redispwd ping 2>/dev/null | grep -c PONG
+```
+### 2.3 systemctl restart zabbix-agent
+### 2.4 import zbx_redis1_templates.xml
+Zabbix->Configuration->Templates->import->zbx_redis1_templates.xml
+### 2.5 Zabbix Host add Redis Template("Template DB Redis1")
 
 ## more redis monitor item
 Zabbix->Configuration->Templates->Template DB Redis->Items->Create item->Key：redis.info[redis_info_key]
