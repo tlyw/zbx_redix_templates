@@ -32,6 +32,7 @@ UserParameter=redis.ping,redis-cli -h 127.0.0.1 -p 6379 -a redispwd ping 2>/dev/
 Zabbix->Configuration->Templates->import->zbx_redis_templates.xml
 ### 1.5 Zabbix Host add Redis Template("Template DB Redis")
 
+
 ## 2 Redis(Cluster)
 
 ### 2.1 /etc/zabbix/zabbix_agentd.d/userparameter_redis1.conf
